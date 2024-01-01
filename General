@@ -1,7 +1,67 @@
-# CREATING AND READING DATA FRAMES
+# ===== CREATING AND READING DATA FRAMES =======
 # DATA ANALYSIS JOURNEY: Cleaning / Preparing / Aggregation / Statistics / Visualization.
 
 import pandas as pd
 pd.read_excel("file.xlsx")
 
-data= [[ 
+data = [["Mark", 55, "Italy", 45, "Europe"],
+       ["John", 36, "Colombia", 3.0, "America"]
+       ["Martina", 25, "", 45, "Europe]]
+
+df = pd.DataFrame(data = data
+                  columns = ['name','age','country','score','continet']
+                  index = [1001,1000,1002]
+df
+df.info()
+df.dtypes()
+
+# ====INDEX =======
+#RENAME INDEX  df.index.name = 'user_id'
+#Reset index   df.reset_index().set_index('name')
+# The original data frame remains untouched. Assign a variable for changing.
+# df.reindex([999,1000,1001,1004)] if the index does not exist the row values will be NaN
+
+#SORT INDEX
+df.sort_index()
+df.sort_values(['continent','age'])
+
+# ====COLUMNS =======
+df.columns
+df.columns.name = 'properties'
+df.rename (columns = {'name':'First_Name', 'age':'Age'})
+
+df.drop(columns = ['name', 'country'],
+          index = [1000,1003])
+df.T   df.transpose()
+df.loc [ : ,['name','continent','age']]
+
+                                 # ====DATA MANIPULATION =======
+# ====1. Selecting data =======
+
+  ---selecting by label  df.loc[row_section, column_section]
+  ---selecting by position
+  ---selecting by boolean indexing tf = (df['age']>40) & (df['country'] == 'USA')
+                                   df.loc[tf, :] 
++--------------------+-----------------------------+
++ boolean operators  + and ==&, or == |, not == ~  +
++--------------------+-----------------------------+
+
+# ====Filter =======
+df.loc[df.index >1000, : ]
+# Filter something in a list, use the isin()
+df.loc[df['country'].isin(['italy','Germany']), :]
+#data frame with only numbers rainfall <400.  rainfall[rainfall <400]
+
+# ====2. Setting data =======
+
+- Assigning value using loc or iloc
+  df2 = df.copy()
+  df2.loc[1000,'name'] = 'Jhon'
+  df2.loc[[1000, 1001],'score'] = [3,4]
+
+- Boolean indexing
+  tf = (df2['age']<20)|(df2['country'] == 'USA')
+  df2.loc[tf,
+
+  
+
