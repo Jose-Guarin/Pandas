@@ -61,7 +61,27 @@ df.loc[df['country'].isin(['italy','Germany']), :]
 
 - Boolean indexing
   tf = (df2['age']<20)|(df2['country'] == 'USA')
-  df2.loc[tf,
+  df2.loc[tf,'name'] = 'xxxx'
+  rainfall2 [rainfall2<400] = 0  # set the value to 0 wherever they are below 400.
+
+- Setting values by replacing values
+  df2.replace('USA','U.S.')
+  df2.replace({'country':{'USA':'U.S'}})
+- Add a new column
+  df2.loc [ : , 'dicount'] = 0
+  df2.loc [ : , 'birth_year'] = 2021 - df2['age']
+
+# ====3. Missing data =======
+
+- df2.loc[1000, 'score'] = None
+- df.loc[1003, : ]
+
+----Delete more values  df2. dropna()
+----Delete all missed values df2.dropna(how = 'all)
+
+
+
+       
 
   
 
