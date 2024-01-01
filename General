@@ -16,16 +16,19 @@ df.info()
 df.dtypes()
 
 # ====INDEX =======
+
 #RENAME INDEX  df.index.name = 'user_id'
 #Reset index   df.reset_index().set_index('name')
 # The original data frame remains untouched. Assign a variable for changing.
 # df.reindex([999,1000,1001,1004)] if the index does not exist the row values will be NaN
 
 #SORT INDEX
+
 df.sort_index()
 df.sort_values(['continent','age'])
 
 # ====COLUMNS =======
+
 df.columns
 df.columns.name = 'properties'
 df.rename (columns = {'name':'First_Name', 'age':'Age'})
@@ -47,6 +50,7 @@ df.loc [ : ,['name','continent','age']]
 +--------------------+-----------------------------+
 
 # ====Filter =======
+
 df.loc[df.index >1000, : ]
 # Filter something in a list, use the isin()
 df.loc[df['country'].isin(['italy','Germany']), :]
@@ -79,9 +83,13 @@ df.loc[df['country'].isin(['italy','Germany']), :]
 ----Delete more values  df2. dropna()
 ----Delete all missed values df2.dropna(how = 'all)
 
+---Finding Nan values   df2.isna()
+---Filling miisng values df2.fillna({'score': df['score'].mean()})
 
+# ====4. Duplicate data =======
 
-       
-
-  
-
+df.drop_duplicates(['country','continent']) 
+df['country'].is_unique
+df['country'].unique()
+df['country'].duplicated()
+df.loc[df['country'].duplicated(keep=False), : ]
