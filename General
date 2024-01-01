@@ -1,0 +1,7 @@
+# CREATING AND READING DATA FRAMES
+# DATA ANALYSIS JOURNEY: Cleaning / Preparing / Aggregation / Statistics / Visualization.
+
+import pandas as pd
+pd.read_excel("file.xlsx")
+
+data= [[ 
