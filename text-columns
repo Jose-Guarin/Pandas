@@ -1,0 +1,7 @@
+The data type is object.
+str = string method
+users_cleaned = users.loc[ :,'name'].str.strip().str.capitalize() 
+# str removes all datatypes differents to strings
+# capitalize() returns the string with fist letter in Uppercase
+users_cleaned.str.startswith('J')
+
