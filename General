@@ -93,3 +93,9 @@ df['country'].is_unique
 df['country'].unique()
 df['country'].duplicated()
 df.loc[df['country'].duplicated(keep=False), : ]
+
+# ====5. Combining DataFrames =======
+-Concatenate
+       pd.concat([df,df2], axis = 0)  for rows
+       pd.concat([df,df2], axis = 1)  for columns
+       pd.concat([df1,df2,....,dfn])
