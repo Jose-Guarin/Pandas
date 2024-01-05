@@ -1,0 +1,4 @@
+-Concatenate
+       pd.concat([df,df2], axis = 0)  for rows
+       pd.concat([df,df2], axis = 1)  for columns
+       pd.concat([df1,df2,....,dfn])
